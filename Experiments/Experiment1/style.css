@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: lightblue;
   height: 98vh;
 }
@@ -18,7 +18,9 @@ body {
 }
 
 .leftButton,
-.rightButton {
+.rightButton,
+.upButton,
+.downButton {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,61 +37,134 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: white;
   aspect-ratio: 1 / 1;
   height: 100%;
   border: 5px solid black;
 }
 
-.leftSquare,
-.rightSquare {
-  display: flex;
+.updown {
+  flex-direction: column;
+}
+
+.leftright {
+  flex-direction: row;
+}
+
+.side {
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50%;
-  animation-name: none;
+  height: 0%;
+  width: 0%;
+  animation-fill-mode: forwards;
+}
+
+.shown {
+  display: flex;
+}
+
+.full {
+  width: 65%;
+  height: 65%;
+}
+
+#firstSide {
+  background-color: purple;
+}
+#secondSide {
+  background-color: red;
+}
+#thirdSide {
+  background-color: blue;
+}
+#fourthSide {
+  background-color: green;
+}
+#fifthSide {
+  background-color: yellow;
+}
+#sixthSide {
+  background-color: orange;
+}
+
+.turningHorizontallyAway {
+  animation-name: turningHorizontallyAway;
   animation-duration: 3s;
 }
 
-.leftSquare {
-  width: 50%;
-  background-color: yellow;
-}
-
-.rightSquare {
-  width: 0%;
-  background-color: green;
-}
-
-.turnedAway {
-  animation-name: turningAway;
-}
-
-.turnedToward {
-  animation-name: turningToward;
-}
-
-@keyframes turningAway {
+@keyframes turningHorizontallyAway {
   0% {
-    width: 50%;
+    width: 65%;
+    height: 65%;
   }
   50% {
-    width: 35%;
+    width: 46%;
+    height: 65%;
   }
   100% {
     width: 0%;
+    height: 65%;
   }
 }
 
-@keyframes turningToward {
+.turningHorizontallyToward {
+  animation-name: turningHorizontallyToward;
+  animation-duration: 3s;
+}
+
+@keyframes turningHorizontallyToward {
   0% {
     width: 0%;
+    height: 65%;
   }
   50% {
-    width: 35%;
+    width: 46%;
+    height: 65%;
   }
   100% {
-    width: 50%;
+    width: 65%;
+    height: 65%;
+  }
+}
+
+.turningVerticallyAway {
+  animation-name: turningVerticallyAway;
+  animation-duration: 3s;
+}
+
+@keyframes turningVerticallyAway {
+  0% {
+    height: 65%;
+    width: 65%;
+  }
+  50% {
+    height: 46%;
+    width: 65%;
+  }
+  100% {
+    height: 0%;
+    width: 65%;
+  }
+}
+
+.turningVerticallyToward {
+  animation-name: turningVerticallyToward;
+  animation-duration: 3s;
+}
+
+@keyframes turningVerticallyToward {
+  0% {
+    height: 0%;
+    width: 65%;
+  }
+  50% {
+    height: 46%;
+    width: 65%;
+  }
+  100% {
+    height: 65%;
+    width: 65%;
   }
 }
