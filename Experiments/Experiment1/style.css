@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  height: 98vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aqua;
+  height: 50vh;
+  width: 100%;
+}
+
+.leftButton,
+.rightButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  border: 2px solid black;
+  background-color: antiquewhite;
+}
+
+.cube {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  border: 5px solid black;
+}
+
+.leftSquare,
+.rightSquare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  animation-name: none;
+  animation-duration: 3s;
+}
+
+.leftSquare {
+  width: 50%;
+  background-color: yellow;
+}
+
+.rightSquare {
+  width: 0%;
+  background-color: green;
+}
+
+.turnedAway {
+  animation-name: turningAway;
+}
+
+.turnedToward {
+  animation-name: turningToward;
+}
+
+@keyframes turningAway {
+  0% {
+    width: 50%;
+  }
+  50% {
+    width: 35%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes turningToward {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 35%;
+  }
+  100% {
+    width: 50%;
+  }
+}

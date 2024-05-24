@@ -1,0 +1,60 @@
+body,
+.puzzle,
+.row,
+.box,
+.three,
+.square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: aqua;
+  height: 98vh;
+}
+
+.puzzle {
+  background-color: white;
+  border: 5px solid black;
+  aspect-ratio: 1 / 1;
+  height: 75%;
+}
+
+.row {
+  flex-direction: row;
+  border: 2px solid black;
+  height: 33%;
+  width: 100%;
+}
+
+.box {
+  flex-direction: column;
+  border: 2px solid black;
+  width: 33%;
+  height: 100%;
+}
+
+.three {
+  flex-direction: row;
+  border: 1px solid grey;
+  height: 33%;
+  width: 100%;
+}
+
+.square {
+  flex-direction: column;
+  border: 1px solid grey;
+  height: 100%;
+  width: 33%;
+  font-family: monospace;
+  font-size: 32px;
+  font-weight: bold;
+  color: grey;
+}
+
+.square.preset {
+  font-weight: bolder;
+  color: black;
+}
