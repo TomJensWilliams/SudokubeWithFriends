@@ -89,6 +89,7 @@ let myCube = new Cube();
 myCube.printCube();
 
 leftButton.addEventListener('click', () => {
+  buttonsOnOff();
   console.log('Left Clicked');
   //
   if (!leftRight) {
@@ -114,10 +115,12 @@ leftButton.addEventListener('click', () => {
     //
     myCube.turnLeft();
     myCube.printCube();
+    buttonsOnOff();
   }, 3000);
 });
 
 rightButton.addEventListener('click', () => {
+  buttonsOnOff();
   console.log('Right Clicked');
   //
   if (!leftRight) {
@@ -139,10 +142,12 @@ rightButton.addEventListener('click', () => {
     theCube.append(sidesArray[myCube.front]);
     myCube.turnRight();
     myCube.printCube();
+    buttonsOnOff();
   }, 3000);
 });
 
 upButton.addEventListener('click', () => {
+  buttonsOnOff();
   console.log('Up Clicked');
   //
   if (leftRight) {
@@ -168,10 +173,12 @@ upButton.addEventListener('click', () => {
     //
     myCube.turnUp();
     myCube.printCube();
+    buttonsOnOff();
   }, 3000);
 });
 
 downButton.addEventListener('click', () => {
+  buttonsOnOff();
   console.log('Down Clicked');
   //
   if (leftRight) {
@@ -194,5 +201,13 @@ downButton.addEventListener('click', () => {
     //
     myCube.turnDown();
     myCube.printCube();
+    buttonsOnOff();
   }, 3000);
 });
+
+function buttonsOnOff() {
+  leftButton.classList.toggle('pointerEventsNone');
+  rightButton.classList.toggle('pointerEventsNone');
+  upButton.classList.toggle('pointerEventsNone');
+  downButton.classList.toggle('pointerEventsNone');
+}

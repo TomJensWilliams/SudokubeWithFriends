@@ -58,3 +58,40 @@ body {
   font-weight: bolder;
   color: black;
 }
+
+.unshown {
+  display: none;
+}
+
+.notes-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.notes-row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 33%;
+}
+
+.note {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: grey;
+  width: 33%;
+  height: 100%;
+}

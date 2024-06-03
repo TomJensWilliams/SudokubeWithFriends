@@ -99,10 +99,22 @@ body {
     width: 65%;
     height: 65%;
   }
+  /*
+  25% {
+    width: 59%;
+    height: 65%;
+  }
+  */
   50% {
     width: 46%;
     height: 65%;
   }
+  /*
+  75% {
+    width: 12%;
+    height: 65%;
+  }
+  */
   100% {
     width: 0%;
     height: 65%;
@@ -119,10 +131,22 @@ body {
     width: 0%;
     height: 65%;
   }
+  /*
+  25% {
+    width: 12%;
+    height: 65%;
+  }
+  */
   50% {
     width: 46%;
     height: 65%;
   }
+  /*
+  75% {
+    width: 59%;
+    height: 65%;
+  }
+  */
   100% {
     width: 65%;
     height: 65%;
@@ -167,4 +191,8 @@ body {
     height: 65%;
     width: 65%;
   }
+}
+
+.pointerEventsNone {
+  pointer-events: none;
 }

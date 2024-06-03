@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 
 function Puzzle(valuesInput) {
+  //
   this.primesArray = [0, 1, 2, 3, 5, 7, 11, 13, 17, 19];
   this.rows = new Array(9);
   this.columns = new Array(9);
@@ -10,6 +11,7 @@ function Puzzle(valuesInput) {
     this.columns[index] = new Array(9);
     this.boxes[index] = new Array(9);
   }
+  //
   let valuesString = valuesInput.split('\n').join('');
   for (let index = 0; index < 81; index++) {
     let currentValue = acceptableInput(valuesString.charAt(index))
@@ -25,12 +27,15 @@ function Puzzle(valuesInput) {
       remainder,
       outerBoxIndex,
       currentValue,
-      true
+      currentValue !== undefined,
+      currentValue !== undefined
     );
     this.rows[quotient][remainder] = currentSquare;
     this.columns[remainder][quotient] = currentSquare;
     this.boxes[outerBoxIndex][innerBoxIndex] = currentSquare;
   }
+
+  // LEFT OFF HERE <===================================================================================================================================================
 
   this.printPuzzle = function () {
     let dividingLine = '+---+---+---+\n';
@@ -202,10 +207,30 @@ function Puzzle(valuesInput) {
   }
 }
 
-function Square(rowInput, columnInput, boxInput, valueInput, presetInput) {
+function Square(
+  rowInput,
+  columnInput,
+  boxInput,
+  valueInput,
+  presetInput,
+  setInput
+) {
   // Visible:
   this.value = valueInput === undefined ? undefined : valueInput;
   this.preset = presetInput === undefined ? false : presetInput;
+  this.set = setInput === undefined ? false : setInput;
+  this.notes = [
+    null,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
   // Not Visible:
   this.row = rowInput;
   this.column = columnInput;
@@ -238,37 +263,7 @@ function FileHandler() {
   };
 }
 
-// Tests:
-
-function firstTest() {
-  function Square(input) {
-    this.side = input;
-  }
-  let firstSquare = new Square(4);
-  let secondSquare = new Square();
-  console.log(firstSquare.side);
-  console.log(secondSquare.side);
-}
-
-function secondTest() {
-  let output = '';
-  for (let index = 0; index < 81; index++) {
-    let firstValue = Math.floor(index / 9);
-    let secondValue = index % 9;
-    let thirdValue =
-      3 * Math.floor(firstValue / 3) + 1 * Math.floor(secondValue / 3);
-    let fourthValue = 3 * (firstValue % 3) + (secondValue % 3);
-    output += '[' + firstValue + '][' + secondValue + '], '; // COLUMNS
-    // output += '[' + secondValue + '][' + firstValue + '], '; // ROWS
-    // output += '[' + thirdValue + '][' + fourthValue + '], '; // BOXES
-    if (index % 9 === 8) {
-      output += '\n';
-    }
-  }
-  console.log(output);
-}
-
-// Working Area:
+// Working Area: //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let myFileHandler = new FileHandler();
 let fileNameEnding = 'puzzleC.txt';
